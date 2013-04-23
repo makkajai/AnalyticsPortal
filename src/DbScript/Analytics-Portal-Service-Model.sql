@@ -4,12 +4,14 @@ so that the analytics database is not supposed to manipulate any data in these t
 
 Create schema analytics;
 
-Create view analytics.students as 
+create or replace view analytics.students as 
 select * from students;
 
 create or replace view analytics.activities as 
 select board_id as activity_id, name, difficulty, title, description, prerequisite, goal from boards;
 
+create or replace view analytics.logs as 
+select * from logs;
 
 /* these tables are specific to analytics database, so it is fine to use them without having views*/
 
@@ -23,6 +25,7 @@ create table analytics.subjects
 create table analytics.topics
 (
   topic_id SERIAL,
+  subject_id INT,
   topic_name TEXT
 );
 
