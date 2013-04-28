@@ -1,19 +1,23 @@
 ﻿function SummaryViewModel() {
+// ReSharper disable InconsistentNaming
+    var _this = this;
+// ReSharper restore InconsistentNaming
     this.studentLogin = ko.observable(""); //this is what is used for fetching data - should be updated
 
-    this.studentSummary = ko.observableArray([{Duration: "100"}, {Duration: "200"}]);
+    this.studentSummary = ko.observableArray();
 
-    this.getData = function() {
-        //make a call to the function
-        //get data
-        var summaryUrl = "/summary/" + this.studentLogin();
-        jQuery.get(summaryUrl, this.bindStudentData, 'json');
-        alert("got to the end");
+    this.bindRow = function (row) {
+        _this.studentSummary.push(row);
     };
 
     this.bindStudentData = function (data) {
-        ko.mapping.fromJS(data, this.studentSummary);
-        alert("mapped");
+        data.forEach(_this.bindRow);
+    };
+    
+    this.getData = function() {
+        _this.studentSummary.removeAll();
+        var summaryUrl = "/summary/" + this.studentLogin();
+        jQuery.get(summaryUrl, this.bindStudentData, 'json');
     };
 };
 
