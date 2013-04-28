@@ -8,7 +8,7 @@ create or replace view analytics.students as
 select * from students;
 
 create or replace view analytics.activities as 
-select board_id as activity_id, name, difficulty, title, description, prerequisite, goal from boards;
+select board_id as activity_id, name, difficulty, logo, title, description, prerequisite, goal from boards;
 
 create or replace view analytics.logs as 
 select * from logs;

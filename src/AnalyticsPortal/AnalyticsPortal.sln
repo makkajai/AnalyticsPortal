@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnalyticsPortal.ServiceModel", "AnalyticsPortal.ServiceModel\AnalyticsPortal.ServiceModel.csproj", "{BE8C6ADA-54B5-46B7-BA9F-9468D7BEFCC5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnalyticsPortal.IntegrationTests", "tests\AnalyticsPortal.IntegrationTests\AnalyticsPortal.IntegrationTests.csproj", "{0DB8EFAE-074A-494B-B19D-694DE31F6433}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnalyticsPortal.Web", "AnalyticsPortal.Web\AnalyticsPortal.Web.csproj", "{88774853-CFE2-40DA-B8F1-280C9C211CC6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +17,14 @@ Global
 		{BE8C6ADA-54B5-46B7-BA9F-9468D7BEFCC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE8C6ADA-54B5-46B7-BA9F-9468D7BEFCC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE8C6ADA-54B5-46B7-BA9F-9468D7BEFCC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DB8EFAE-074A-494B-B19D-694DE31F6433}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DB8EFAE-074A-494B-B19D-694DE31F6433}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DB8EFAE-074A-494B-B19D-694DE31F6433}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DB8EFAE-074A-494B-B19D-694DE31F6433}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88774853-CFE2-40DA-B8F1-280C9C211CC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88774853-CFE2-40DA-B8F1-280C9C211CC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88774853-CFE2-40DA-B8F1-280C9C211CC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88774853-CFE2-40DA-B8F1-280C9C211CC6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
