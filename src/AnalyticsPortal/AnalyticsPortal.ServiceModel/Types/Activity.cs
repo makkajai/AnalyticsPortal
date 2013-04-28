@@ -5,8 +5,8 @@ namespace AnalyticsPortal.ServiceModel.Types
     [Alias("analytics.activities")]
     public class Activity 
     {
-        [Alias("activity_id")]
-        public int ActivityId { get; set; }
+        [Alias("activity_id"), PrimaryKey]
+        public int Id { get; set; }
 
         public string Name { get; set; }
 

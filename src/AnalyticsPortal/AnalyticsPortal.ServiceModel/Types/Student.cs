@@ -5,8 +5,8 @@ namespace AnalyticsPortal.ServiceModel.Types
     [Alias("students")]
     public class Student
     {
-        [Alias("student_id")]
-        public int StudentId { get; set; }
+        [Alias("student_id"), PrimaryKey]
+        public int Id { get; set; }
 
         public string Login { get; set; }
 
