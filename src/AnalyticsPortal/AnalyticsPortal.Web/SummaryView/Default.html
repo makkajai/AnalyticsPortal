@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Activity Summary</title>
+    <script src="../Scripts/jquery-2.0.0.min.js"></script>
+    <script src="../Scripts/knockout-2.2.1.js"></script>
+    <script src="../Scripts/knockout.mapping-latest.js"></script>
+</head>
+<body>
+    <h1>Activity Summary</h1>
+    <div width="100%" align="left">
+        <span>Enter student login</span>
+        <input data-bind="value: studentLogin" />
+        <button data-bind="click: getData">Fetch</button>
+    </div>
+    <div align="left" width="100%">
+        <h2 data-bind="text: studentLogin"></h2>
+    </div>
+    <div data-bind="foreach: studentSummary">
+        <span data-bind="text:Duration"></span>
+    </div>
+    <script src="../Scripts/summary/summary.js"></script>
+</body>
+</html>
