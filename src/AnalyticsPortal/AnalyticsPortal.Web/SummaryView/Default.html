@@ -18,6 +18,8 @@
     </div>
     <div data-bind="foreach: studentSummary">
         <span data-bind="text:Duration"></span>
+        <!--<span data-bind="text:Activity.LogoUrl"></span>-->
+        <img width="16px" height="16px" data-bind="attr:{src: Activity.LogoUrl}"></img>
     </div>
     <script src="../Scripts/summary/summary.js"></script>
 </body>
