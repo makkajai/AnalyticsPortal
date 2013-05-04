@@ -10,10 +10,8 @@ namespace AnalyticsPortal.ServiceModel.Types
 
         public string Login { get; set; }
 
-        [Alias("last_name")]
         public string LastName { get; set; }
 
-        [Alias("first_name")]
         public string FirstName { get; set; }
 
         [Ignore]

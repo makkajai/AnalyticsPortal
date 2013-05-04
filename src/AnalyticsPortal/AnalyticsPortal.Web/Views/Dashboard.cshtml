@@ -1,0 +1,14 @@
+﻿@using ServiceStack.ServiceInterface.Auth
+@inherits ViewPage<IEnumerable<AnalyticsPortal.ServiceModel.Types.Student>> 
+@{
+    ViewBag.Title = "Login";
+    var session = GetSession<AuthUserSession>();
+}
+
+<h1>Welcome @string.Format("{0} {1}", session.FirstName, session.LastName)</h1>
+<div>
+    <span>Choose a student</span>
+    @foreach(var student in Model){
+        <a href="/summary/@student.Login">@student.FullName</a>
+    }
+</div>

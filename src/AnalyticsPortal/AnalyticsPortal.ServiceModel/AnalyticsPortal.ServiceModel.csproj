@@ -78,6 +78,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DashboardDTOs.cs" />
     <Compile Include="SummaryDTOs.cs" />
     <Compile Include="Types\Activity.cs" />
     <Compile Include="Types\ActivitySummaryResult.cs" />

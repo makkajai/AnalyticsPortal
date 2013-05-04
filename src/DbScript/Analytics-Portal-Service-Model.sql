@@ -5,8 +5,6 @@ create table usertostudents
   student_login TEXT
 );
 
-select * from "UserAuth"
-
 /*needed for authentication */
 CREATE TABLE "UserAuth"
 (
