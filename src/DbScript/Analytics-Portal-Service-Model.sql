@@ -1,8 +1,17 @@
-﻿/* use a separate schema */
+﻿/* mapping between user ids and student ids */
+create table usertostudents
+(
+  user_id TEXT,
+  student_login TEXT
+);
+
+
+-- COMMENTED OUT FOR NOW - SIMPLIFYING THE SCHEMA
+/* use a separate schema */
 /*create views for tables that might need to be independent eventually - note that these are read-only as views, and this is by design
 so that the analytics database is not supposed to manipulate any data in these tables*/
 
-Create schema analytics;
+/*Create schema analytics;
 
 create or replace view analytics.students as 
 select * from students;
@@ -12,9 +21,10 @@ select board_id as activity_id, name, difficulty, logo, title, description, prer
 
 create or replace view analytics.logs as 
 select * from logs;
+*/
 
 /* these tables are specific to analytics database, so it is fine to use them without having views*/
-
+/* for now not used
 create table analytics.subjects
 (
   subject_id SERIAL,
@@ -41,3 +51,6 @@ create table analytics.activitiestosubtopics
   subtopic_id INT,
   activity_id INT
 );
+*/
+
+

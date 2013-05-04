@@ -13,19 +13,18 @@ namespace AnalyticsPortal.Web.Helpers
             @"WITH topnlogs as  
               (select date, duration, l.student_id, board_id, level, sublevel, status, comment,
                      ROW_NUMBER() OVER (PARTITION BY board_id ORDER BY DATE DESC) as RowNum
-                     from analytics.logs l inner join
+                     from logs l inner join
                           students s on s.student_id = l.student_id
                      where login = @login
               )
              select sum(duration) as duration, max(level) as maxlevel, sum(status) as correct, sum(1-status) as incorrect, @top as LastX,
-             a.activity_id as Id, a.name, a.difficulty, a.logo, a.title, a.description, a.prerequisite, a.goal, 
+             b.board_id as Id, b.name, b.difficulty, b.logo, b.title, b.description, b.prerequisite, b.goal, 
              s.student_id as Id, s.login, s.lastname, s.firstname
              from topnlogs l
-             inner join analytics.activities a on board_id = activity_id
-             inner join analytics.students s on s.student_id = l.student_id
+             inner join boards b on l.board_id = b.board_id
+             inner join students s on s.student_id = l.student_id
              where RowNum <= @top
-             group by board_id, name, title, logo, 
-             a.activity_id, a.name, a.difficulty, a.logo, a.title, a.description, a.prerequisite, a.goal,
+             group by b.board_id, b.name, b.difficulty, b.logo, b.title, b.description, b.prerequisite, b.goal,
              s.student_id, s.login, s.lastname, s.firstname
         ";
 

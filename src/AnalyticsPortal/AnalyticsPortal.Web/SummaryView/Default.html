@@ -13,13 +13,28 @@
         <input data-bind="value: studentLogin" />
         <button data-bind="click: getData">Fetch</button>
     </div>
-    <div align="left" width="100%">
+    <div>
         <h2 data-bind="text: studentLogin"></h2>
     </div>
-    <div data-bind="foreach: studentSummary">
-        <span data-bind="text:Duration"></span>
-        <!--<span data-bind="text:Activity.LogoUrl"></span>-->
-        <img width="16px" height="16px" data-bind="attr:{src: Activity.LogoUrl}"></img>
+    <div data-bind="foreach: studentSummary" style="float: left; width: 100%; ">
+        <div style="float: left; margin: 10px; border: black; border-width: 10px; padding: 3px">
+            <div style="margin-left: 20px">
+                <span data-bind="text:Activity.Name"></span>
+            </div>
+            <img style="width: 160px; height: 160px" data-bind="attr:{src: Activity.LogoUrl, alt: Activity.Name}"></img>
+            <div style="margin-left: 20px">
+                <b>Total Duration: </b>
+                <span data-bind="text:Duration"></span>
+            </div>
+            <div style="margin-left: 20px">
+                <b>Correct: </b>
+                <span data-bind="text:Correct"></span>
+            </div>
+            <div style="margin-left: 20px">
+                <b>Incorrect: </b>
+                <span data-bind="text:Incorrect"></span>
+            </div>
+        </div>
     </div>
     <script src="../Scripts/summary/summary.js"></script>
 </body>
