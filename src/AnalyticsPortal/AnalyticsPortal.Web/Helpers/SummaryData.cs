@@ -9,7 +9,7 @@ namespace AnalyticsPortal.Web.Helpers
         /// <summary>
         /// Query to get the top n log entries
         /// </summary>
-        public const string ActivityResultsQuery =
+        public const string ActivityResultsTopNQuery =
             @"WITH topnlogs as  
               (select date, duration, l.student_id, board_id, level, sublevel, status, comment,
                      ROW_NUMBER() OVER (PARTITION BY board_id ORDER BY DATE DESC) as RowNum
@@ -35,7 +35,7 @@ namespace AnalyticsPortal.Web.Helpers
                 //use Dapper's multi-mapping feature to get referenced objects also populated at once. 
                 return
                     conn.Query<ActivitySummaryResult, Activity, Student, ActivitySummaryResult>(
-                        ActivityResultsQuery,
+                        ActivityResultsTopNQuery,
                         (result, activity, student) =>
                             {
                                 result.Activity = activity;
@@ -43,6 +43,34 @@ namespace AnalyticsPortal.Web.Helpers
                                 return result;
                             }, new {login, top = lastXNum});
             }
+        }
+
+        public const string ActivityResultsQuery =
+            @"select sum(duration) as duration, max(level) as maxlevel, sum(status) as correct, sum(1-status) as incorrect, 
+             b.board_id as Id, b.name, b.difficulty, b.logo, b.title, b.description, b.prerequisite, b.goal, 
+             s.student_id as Id, s.login, s.lastname, s.firstname
+             from logs l
+             inner join boards b on l.board_id = b.board_id
+             inner join students s on s.student_id = l.student_id
+             where s.login = @login
+             group by b.board_id, b.name, b.difficulty, b.logo, b.title, b.description, b.prerequisite, b.goal,
+             s.student_id, s.login, s.lastname, s.firstname";
+
+        public static IEnumerable<ActivitySummaryResult> GetSummary(string login)
+        {
+           using(var conn = DbHelper.GetConnection())
+           {
+                //use Dapper's multi-mapping feature to get referenced objects also populated at once. 
+                return
+                    conn.Query<ActivitySummaryResult, Activity, Student, ActivitySummaryResult>(
+                        ActivityResultsQuery,
+                        (result, activity, student) =>
+                            {
+                                result.Activity = activity;
+                                result.Student = student;
+                                return result;
+                            }, new {login});
+           }
         }
     }
 }

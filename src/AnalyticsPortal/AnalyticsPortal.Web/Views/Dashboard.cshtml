@@ -4,11 +4,15 @@
     ViewBag.Title = "Dashboard";
     var session = GetSession<AuthUserSession>();
 }
-
 <h1>Welcome @string.Format("{0} {1}", session.FirstName, session.LastName)</h1>
-<div align="left">
-    <span>Choose a student</span>
-    @foreach(var student in Model){
-        <a href="/summary/@student.Login">@student.FullName</a>
+<div align="left" style="margin: 50px">
+    <div style="margin-bottom: 10px">
+        <span>Click on a student to see detailed report</span>
+    </div>
+    @foreach (var student in Model)
+    {
+        <div>
+            <a href="/summary/@student.Login"><b>@student.FullName</b></a>
+        </div>
     }
 </div>

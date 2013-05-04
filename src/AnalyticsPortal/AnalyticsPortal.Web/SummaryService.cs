@@ -10,7 +10,7 @@ namespace AnalyticsPortal.Web
     {
         public object Get(SummaryRequest request)
         {
-            return SummaryData.GetSummary(request.StudentLogin, 5);
+            return SummaryData.GetSummary(request.StudentLogin);
         }
     }
 }
