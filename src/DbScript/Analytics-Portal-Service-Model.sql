@@ -5,6 +5,7 @@ create table usertostudents
   student_login TEXT
 );
 
+select * from "UserAuth"
 
 /*needed for authentication */
 CREATE TABLE "UserAuth"
@@ -43,6 +44,50 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE "UserAuth"
+  OWNER TO postgres;
+
+
+
+CREATE TABLE "UserOAuthProvider"
+(
+  "Id" serial NOT NULL,
+  "UserAuthId" integer NOT NULL,
+  "Provider" text,
+  "UserId" text,
+  "UserName" text,
+  "FullName" text,
+  "DisplayName" text,
+  "FirstName" text,
+  "LastName" text,
+  "Email" text,
+  "BirthDate" timestamp without time zone,
+  "BirthDateRaw" text,
+  "Country" text,
+  "Culture" text,
+  "Gender" text,
+  "Language" text,
+  "MailAddress" text,
+  "Nickname" text,
+  "PostalCode" text,
+  "TimeZone" text,
+  "RefreshToken" text,
+  "RefreshTokenExpiry" timestamp without time zone,
+  "RequestToken" text,
+  "RequestTokenSecret" text,
+  "Items" text,
+  "AccessToken" text,
+  "AccessTokenSecret" text,
+  "CreatedDate" timestamp without time zone NOT NULL,
+  "ModifiedDate" timestamp without time zone NOT NULL,
+  "RefId" integer,
+  "RefIdStr" text,
+  "Meta" text,
+  CONSTRAINT "UserOAuthProvider_pkey" PRIMARY KEY ("Id")
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE "UserOAuthProvider"
   OWNER TO postgres;
 
 

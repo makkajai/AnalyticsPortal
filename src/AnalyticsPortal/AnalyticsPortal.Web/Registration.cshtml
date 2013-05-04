@@ -1,0 +1,29 @@
+﻿@inherits ViewPage
+
+@{
+    ViewBag.Title = "Register";
+}
+
+<h1>Register as a user</h1>
+<form id="registration" action="/register">
+    First Name : <input type="text" name ="firstname"/>
+    Last Name : <input type="text" name ="lastname"/>
+    Email Id : <input type="text" name="email"/>
+    Username : <input type="text" name="username"/>
+    Password : <input type="password" name="password"/>
+    <input type="submit" value="Register"/>
+</form>
+
+<script src="Scripts/jquery-2.0.0.js"></script>
+<script type="text/javascript">
+    $(function() {
+        $("#registration").submit(function () {
+            var url = $("#registration").attr("action");
+            $.post(url, $("#registration").serialize(),
+                function (data) {
+                    alert(JSON.stringify(data));
+                });
+            return false;
+        });
+    });
+</script>

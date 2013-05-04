@@ -1,15 +1,14 @@
 ﻿@using AnalyticsPortal.ServiceModel.Types
 @inherits ViewPage<IEnumerable<ActivitySummaryResult>> 
               
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>Activity Summary</title>
-</head>
-<body>
-    <h1>Activity Summary for @Model.First().Student.FullName</h1>
-    <div style="float: left; width: 100%; margin-top: 20px">
-    @foreach (var status in Model) {
+@{
+    ViewBag.Title = Model.First().Student.FullName;
+}
+              
+<h1>Activity Summary for @Model.First().Student.FullName</h1>
+<div style="float: left; width: 100%; margin-top: 20px">
+    @foreach (var status in Model)
+    {
         <div style="float: left; margin: 10px; border: black; border-width: 10px; padding: 3px">
             <div style="margin-left: 20px">
                 <span>@status.Activity.Name</span>
@@ -28,7 +27,5 @@
                 <span>@status.Incorrect</span>
             </div>
         </div>
-     }
-    </div>
-</body>
-</html>
+    }
+</div>

@@ -5,6 +5,7 @@ using ServiceStack.ServiceInterface;
 namespace AnalyticsPortal.Web
 {
     [DefaultView("Summary")]
+    [Authenticate]
     public class SummaryService : Service
     {
         public object Get(SummaryRequest request)
