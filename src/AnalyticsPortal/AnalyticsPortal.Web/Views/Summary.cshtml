@@ -1,0 +1,38 @@
+﻿@using AnalyticsPortal.ServiceModel.Types
+@inherits ViewPage<IEnumerable<ActivitySummaryResult>> 
+              
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Activity Summary</title>
+    <script src="../Scripts/jquery-2.0.0.min.js"></script>
+    <script src="../Scripts/knockout-2.2.1.js"></script>
+    <script src="../Scripts/knockout.mapping-latest.js"></script>
+</head>
+<body>
+    <h1>Activity Summary for @Model.First().Student.FullName</h1>
+    <div style="float: left; width: 100%; margin-top: 20px">
+    @foreach (var status in Model) {
+        <div style="float: left; margin: 10px; border: black; border-width: 10px; padding: 3px">
+            <div style="margin-left: 20px">
+                <span>@status.Activity.Name</span>
+            </div>
+            <img style="width: 160px; height: 160px" src="@status.Activity.LogoUrl" alt="@status.Activity.Name"></img>
+            <div style="margin-left: 20px">
+                <b>Total Duration: </b>
+                <span>@status.Duration</span>
+            </div>
+            <div style="margin-left: 20px">
+                <b>Correct: </b>
+                <span>@status.Correct</span>
+            </div>
+            <div style="margin-left: 20px">
+                <b>Incorrect: </b>
+                <span>@status.Incorrect</span>
+            </div>
+        </div>
+     }
+    </div>
+    <script src="../Scripts/summary/summary.js"></script>
+</body>
+</html>

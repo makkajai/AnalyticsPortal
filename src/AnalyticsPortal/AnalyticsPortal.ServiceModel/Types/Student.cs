@@ -15,5 +15,11 @@ namespace AnalyticsPortal.ServiceModel.Types
 
         [Alias("first_name")]
         public string FirstName { get; set; }
+
+        [Ignore]
+        public string FullName
+        {
+            get { return string.Format("{0} {1}", FirstName, LastName); }
+        }
     }
 }

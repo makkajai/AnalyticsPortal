@@ -464,7 +464,8 @@
     <Content Include="Scripts\knockout.mapping-latest.debug.js" />
     <Content Include="Scripts\knockout.mapping-latest.js" />
     <Content Include="Scripts\summary\summary.js" />
-    <Content Include="SummaryView\Default.html" />
+    <Content Include="SummaryView\default.html" />
+    <None Include="Views\Summary.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

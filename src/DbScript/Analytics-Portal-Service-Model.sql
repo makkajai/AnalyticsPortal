@@ -6,6 +6,46 @@ create table usertostudents
 );
 
 
+/*needed for authentication */
+CREATE TABLE "UserAuth"
+(
+  "Id" serial NOT NULL,
+  "UserName" text,
+  "Email" text,
+  "PrimaryEmail" text,
+  "FirstName" text,
+  "LastName" text,
+  "DisplayName" text,
+  "BirthDate" timestamp without time zone,
+  "BirthDateRaw" text,
+  "Country" text,
+  "Culture" text,
+  "FullName" text,
+  "Gender" text,
+  "Language" text,
+  "MailAddress" text,
+  "Nickname" text,
+  "PostalCode" text,
+  "TimeZone" text,
+  "Salt" text,
+  "PasswordHash" text,
+  "DigestHA1Hash" text,
+  "Roles" text,
+  "Permissions" text,
+  "CreatedDate" timestamp without time zone NOT NULL,
+  "ModifiedDate" timestamp without time zone NOT NULL,
+  "RefId" integer,
+  "RefIdStr" text,
+  "Meta" text,
+  CONSTRAINT "UserAuth_pkey" PRIMARY KEY ("Id")
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE "UserAuth"
+  OWNER TO postgres;
+
+
 -- COMMENTED OUT FOR NOW - SIMPLIFYING THE SCHEMA
 /* use a separate schema */
 /*create views for tables that might need to be independent eventually - note that these are read-only as views, and this is by design
