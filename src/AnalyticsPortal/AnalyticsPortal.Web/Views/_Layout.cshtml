@@ -1,6 +1,4 @@
 ﻿@using ServiceStack.ServiceInterface.Auth
-@*@inherits @ViewPage*@
-
 <!doctype html>
 <html lang="en-us">
 <head>
@@ -18,7 +16,7 @@
             var session = GetSession<AuthUserSession>();
             if(session.IsAuthenticated)
             {
-                <div align="right" style="margin-right: 30px"><a href="/auth/logout">Sign Out</a></div>
+                <div  style="margin-right: 30px; float: right"><a href="/auth/logout">Sign Out</a></div>
             }
         }
         @RenderBody()
