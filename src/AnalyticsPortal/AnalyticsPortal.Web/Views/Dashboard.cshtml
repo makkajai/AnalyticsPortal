@@ -12,7 +12,7 @@
     @foreach (var student in Model)
     {
         <div>
-            <a href="/summary/@student.Login"><b>@student.FullName</b></a>
+            <a href="summary?StudentLogin=@student.Login"><b>@student.FullName</b></a>
         </div>
     }
 </div>

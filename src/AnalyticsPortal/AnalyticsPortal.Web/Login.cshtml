@@ -4,7 +4,7 @@
     ViewBag.Title = "Login";
 }
 <div class="container">
-    <form id="login" action="/auth/credentials" class="form-signin">
+    <form id="login" action="auth/credentials" class="form-signin">
         <h2 class="form-signin-heading">Please sign in</h2>
     <h6 style="font-size:12px; color: #999">
         Login as a Teacher or a parent
@@ -16,7 +16,7 @@
             Remember me
         </label>
         <button class="btn btn-large btn-primary" type="submit">Sign in</button>
-        <span style="margin-left: 5px">Don't have an id? </span><a href="/registration">Sign Up Now</a>
+        <span style="margin-left: 5px">Don't have an id? </span><a href="registration">Sign Up Now</a>
     </form>
 </div>
 
@@ -29,7 +29,7 @@
             var url = $("#login").attr("action");
             $.post(url, $("#login").serialize(),
                 function () {
-                    window.location.replace("/dashboard");
+                    window.location.replace("dashboard");
                 });
             return false;
         });

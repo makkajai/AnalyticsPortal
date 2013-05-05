@@ -2,7 +2,7 @@
 
 namespace AnalyticsPortal.ServiceModel
 {
-    [Route("/summary/{StudentLogin}", "GET")]
+    [Route("/summary", "GET")]
     public class SummaryRequest
     {
         public string StudentLogin { get; set; }

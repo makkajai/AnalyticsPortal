@@ -5,7 +5,7 @@ namespace AnalyticsPortal.ServiceModel.Types
     [Alias("analytics.activities")]
     public class Activity
     {
-        public const string LogoPath = "/Images/logos";
+        public const string LogoPath = "Images/logos";
 
         [Alias("activity_id"), PrimaryKey]
         public int Id { get; set; }

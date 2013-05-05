@@ -115,13 +115,13 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-responsive.css" />
-    <Content Include="Content\bootstrap-responsive.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\forms.css" />
-    <Content Include="Content\images\glyphicons-halflings-white.png" />
-    <Content Include="Content\images\glyphicons-halflings.png" />
+    <None Include="Content\bootstrap-responsive.css" />
+    <None Include="Content\bootstrap-responsive.min.css" />
+    <None Include="Content\bootstrap.css" />
+    <None Include="Content\bootstrap.min.css" />
+    <None Include="Content\forms.css" />
+    <None Include="Content\images\glyphicons-halflings-white.png" />
+    <None Include="Content\images\glyphicons-halflings.png" />
     <Content Include="Global.asax" />
     <Content Include="Login.cshtml" />
     <Content Include="Registration.cshtml" />
@@ -469,8 +469,8 @@
     <None Include="Images\logos\xylofon_son3.svg" />
     <None Include="Images\logos\xylofon_son4.svg" />
     <None Include="Images\logos\yellow_duck.svg" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\bootstrap.js" />
+    <None Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-2.0.0.js" />
     <Content Include="Scripts\jquery-2.0.0.min.js" />
     <Content Include="Scripts\knockout-2.2.1.debug.js" />
@@ -482,6 +482,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Views\_Layout.cshtml" />
+    <Content Include="_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DashboardService.cs" />

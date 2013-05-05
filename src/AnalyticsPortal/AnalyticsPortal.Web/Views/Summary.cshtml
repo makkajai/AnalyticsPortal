@@ -5,7 +5,7 @@
     ViewBag.Title = Model.First().Student.FullName;
 }
               
-<h1>Activity Summary for @Model.First().Student.FullName</h1><a style="margin-left: 10px" href="/dashboard">Back to Dashboard</a>
+<h1>Activity Summary for @Model.First().Student.FullName</h1><a style="margin-left: 10px" href="dashboard">Back to Dashboard</a>
 <div style="float: left; width: 100%; margin-top: 20px">
     @foreach (var status in Model)
     {
@@ -13,7 +13,7 @@
             <div style="margin-left: 20px">
                 <span>@status.Activity.Name</span>
             </div>
-            <img style="width: 160px; height: 160px" src="@status.Activity.LogoUrl" alt="@status.Activity.Name"></img>
+            <img style="width: 160px; height: 160px" src="@status.Activity.LogoUrl" alt="@status.Activity.Name" />
             <div style="margin-left: 20px">
                 <b>Total Duration: </b>
                 <span>@status.Duration</span>
