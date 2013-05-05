@@ -125,6 +125,7 @@
     <Content Include="Global.asax" />
     <Content Include="Login.cshtml" />
     <Content Include="Registration.cshtml" />
+    <Content Include="Scripts\purl.js" />
     <Content Include="Views\Dashboard.cshtml" />
     <Content Include="Home.cshtml" />
     <Content Include="NotFound.cshtml" />
