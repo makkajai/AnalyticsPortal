@@ -45,7 +45,7 @@ namespace AnalyticsPortal.Web
                 DebugMode = true, 
                 CustomHttpHandlers = {
                     { HttpStatusCode.NotFound, new RazorHandler("/notfound") },
-                    { HttpStatusCode.Unauthorized, new RazorHandler("~/login") },
+                    { HttpStatusCode.Unauthorized, new RazorHandler("/login") },
                 }
             });
         }
