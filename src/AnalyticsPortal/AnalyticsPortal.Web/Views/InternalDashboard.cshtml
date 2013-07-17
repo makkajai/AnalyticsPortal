@@ -1,0 +1,27 @@
+﻿@using ServiceStack.ServiceInterface.Auth
+@inherits ViewPage<IEnumerable<AnalyticsPortal.ServiceModel.Types.StudentUsage>> 
+@{
+    ViewBag.Title = "Internal Dashboard";
+}
+<h1>Student Usage Data</h1>
+<div align="left" style="margin: 50px">
+    <table>
+        <tr>
+            <th>Last Played Date</th>
+            <th>Log Count</th>
+            <th>Login</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+        </tr>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.LastPlayedDate</td>
+                <td>@student.LogCount</td>
+                <td>@student.Login</td>
+                <td>@student.LastName</td>
+                <td>@student.FirstName</td>
+            </tr>
+        }
+    </table>
+</div>
