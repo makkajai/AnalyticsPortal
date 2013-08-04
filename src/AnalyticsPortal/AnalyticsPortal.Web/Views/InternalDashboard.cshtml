@@ -1,26 +1,92 @@
-﻿@using ServiceStack.ServiceInterface.Auth
-@inherits ViewPage<IEnumerable<AnalyticsPortal.ServiceModel.Types.StudentUsage>> 
+﻿@inherits ViewPage<AnalyticsPortal.ServiceModel.InternalDashboardResponse> 
 @{
     ViewBag.Title = "Internal Dashboard";
 }
+<style type='text/css'>
+    table, td, th
+    {
+        border: 1px solid black;
+    }
+</style>
 <h1>Student Usage Data</h1>
-<div align="left" style="margin: 50px">
-    <table>
+<a href="https://docs.google.com/spreadsheet/ccc?key=0AiQLJeOnVwZ0dDV4bzBkVDBPalhkUXRPbkdBZGlPckE#gid=0" target="_blank">Trial Candidates</a>
+<a href="dashboard/logs?format=csv" target="_blank" style="margin-left: 50px">Dump all logs</a>
+<div align="left" style="margin: 50px; margin-right: 150px; float: left">
+    <table style="border: 1px">
         <tr>
             <th>Last Played Date</th>
+            <th>First Played Date</th>
             <th>Log Count</th>
             <th>Login</th>
             <th>First Name</th>
             <th>Last Name</th>
         </tr>
-        @foreach (var student in Model)
+        @foreach (var student in Model.StudentUsageData)
         {
             <tr>
                 <td>@student.LastPlayedDate</td>
+                <td>@student.FirstPlayedDate</td>
                 <td>@student.LogCount</td>
                 <td>@student.Login</td>
                 <td>@student.LastName</td>
                 <td>@student.FirstName</td>
+            </tr>
+        }
+    </table>
+</div>
+<div align="left" style="margin: 50px">
+<h1>Key Metrics</h1>
+    <table style="border: 1px">
+        <tr>
+            <td>Total Registrations</td>
+            <td>@Model.TotalRegistrations</td>
+        </tr>
+        <tr>
+            <td>Conversion Percentage</td>
+            <td>@Model.ConversionPercentage</td>
+        </tr>
+        <tr>
+            <td>Stickiness</td>
+            <td>@Model.Stickiness</td>
+        </tr>
+        <tr>
+            <td>Average Time Per Login (s) </td>
+            <td>@Model.AverageTimePerLogIn</td>
+        </tr>
+    </table>
+</div>
+<h1>Active Students Trend</h1>
+<div align="left" style="margin: 50px">
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Active Students Count</th>
+        </tr>
+        @foreach (var date in Model.ActiveStudentsTrendData)
+        {
+            <tr>
+                <td>@date.Date</td>
+                <td>@date.ActiveStudents</td>
+            </tr>
+        }
+    </table>
+</div>
+<div align="left" style="margin: 50px; float: left">
+<h1>Board Usage Data</h1>
+    <table>
+        <tr>
+            <th>Board Name</th>
+            <th>Description</th>
+            <th>Total duration played (s)</th>
+            <th>Last Played date</th>
+        </tr>
+        @foreach (var date in Model.BoardUsageData)
+        {
+            <tr>
+                <td>@date.BoardName</td>
+                <td>@date.Description</td>
+                <td>@date.DurationPlayed</td>
+                <td>@date.LastPlayedDate</td>
             </tr>
         }
     </table>

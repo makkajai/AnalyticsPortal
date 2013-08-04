@@ -491,6 +491,7 @@
     <Content Include="_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\LogData.cs" />
     <Compile Include="InternalDashboardService.cs" />
     <Compile Include="DashboardService.cs" />
     <Compile Include="Helpers\InternalDashboardData.cs" />

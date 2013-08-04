@@ -7,9 +7,21 @@ namespace AnalyticsPortal.Web
     [DefaultView("InternalDashboard")]
     public class InternalDashboardService : Service
     {
-        public object Get(StudentsUsageRequest request)
+        public object Get(InternalDashboardRequest request)
         {
-            return InternalDashboardData.GetStudentUsageData();
+            return new InternalDashboardResponse
+                {
+                    AverageTimePerLogIn = InternalDashboardData.GetAverageTimePerLogin(),
+                    StudentUsageData = InternalDashboardData.GetStudentUsageData(),
+                    ActiveStudentsTrendData = InternalDashboardData.GetActiveStudentsData(),
+                    BoardUsageData = InternalDashboardData.GetBoardUsageData()
+                };
+        }
+
+        public object Get(LogRequest request)
+        {
+            var response = LogData.Get();
+            return response;
         }
     }
 }

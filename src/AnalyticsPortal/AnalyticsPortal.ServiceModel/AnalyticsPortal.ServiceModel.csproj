@@ -84,6 +84,9 @@
     <Compile Include="Types\Activity.cs" />
     <Compile Include="Types\ActivitySummaryResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Types\ActiveStudentsTrend.cs" />
+    <Compile Include="Types\BoardUsage.cs" />
+    <Compile Include="LogDTOs.cs" />
     <Compile Include="Types\Student.cs" />
     <Compile Include="Types\StudentUsage.cs" />
   </ItemGroup>

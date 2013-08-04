@@ -8,6 +8,7 @@ using ServiceStack.OrmLite.PostgreSQL;
 using ServiceStack.Razor;
 using ServiceStack.ServiceInterface;
 using ServiceStack.ServiceInterface.Auth;
+using ServiceStack.Text;
 using ServiceStack.WebHost.Endpoints;
 
 namespace AnalyticsPortal.Web
