@@ -17,6 +17,7 @@
             <th>Last Played Date</th>
             <th>First Played Date</th>
             <th>Log Count</th>
+            <th>Total Time Spent</th>
             <th>Login</th>
             <th>First Name</th>
             <th>Last Name</th>
@@ -27,6 +28,7 @@
                 <td>@student.LastPlayedDate</td>
                 <td>@student.FirstPlayedDate</td>
                 <td>@student.LogCount</td>
+                <td>@student.TotalTimeSpent</td>
                 <td>@student.Login</td>
                 <td>@student.LastName</td>
                 <td>@student.FirstName</td>
@@ -42,8 +44,16 @@
             <td>@Model.TotalRegistrations</td>
         </tr>
         <tr>
+            <td>Conversions</td>
+            <td>@Model.ConvertedRegistrations</td>
+        </tr>
+        <tr>
             <td>Conversion Percentage</td>
             <td>@Model.ConversionPercentage</td>
+        </tr>
+        <tr>
+            <td>Active Kids</td>
+            <td>@Model.ActiveRegistrations</td>
         </tr>
         <tr>
             <td>Stickiness</td>

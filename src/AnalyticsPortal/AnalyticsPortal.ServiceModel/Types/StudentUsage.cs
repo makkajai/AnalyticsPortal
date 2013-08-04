@@ -10,6 +10,8 @@ namespace AnalyticsPortal.ServiceModel.Types
 
         public int LogCount { get; set; }
 
+        public int TotalTimeSpent { get; set; }
+
         public string Login { get; set; }
 
         public string FirstName { get; set; }
